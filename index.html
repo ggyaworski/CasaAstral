@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CasaAstral - Tu Carta Natal</title>
+    
+    <!-- Acá llamaremos al archivo de estilos -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Esto es clave para la PWA -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Color de la barrita del navegador en el celu -->
+    <meta name="theme-color" content="#1a1a2e">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>CasaAstral</h1>
+            <p>Descubrí tu mapa en el cielo y exportalo para analizar con IA.</p>
+        </header>
+
+        <section class="form-section">
+            <form id="astrology-form">
+                <div class="input-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" required placeholder="Ej: Guada">
+                </div>
+                <div class="input-group">
+                    <label for="birthdate">Fecha de nacimiento</label>
+                    <input type="date" id="birthdate" required>
+                </div>
+                <div class="input-group">
+                    <label for="birthtime">Hora de nacimiento</label>
+                    <input type="time" id="birthtime" required>
+                </div>
+                <div class="input-group">
+                    <label for="location">Ciudad de nacimiento</label>
+                    <!-- Más adelante podemos conectarlo a una API de mapas, por ahora texto libre -->
+                    <input type="text" id="location" required placeholder="Ej: Buenos Aires">
+                </div>
+                <button type="submit" id="generate-btn">Generar Carta</button>
+            </form>
+        </section>
+
+        <!-- Acá se van a mostrar los resultados después de consultar la API -->
+        <section id="results-section" style="display: none;">
+            <h2>Tus Posiciones</h2>
+            <div id="chart-data">
+                <!-- Nuestro Javascript va a inyectar los datos acá adentro -->
+            </div>
+            <button id="export-btn">Copiar datos para IA</button>
+        </section>
+    </main>
+
+    <!-- Acá llamamos a la lógica de la app -->
+    <script src="app.js"></script>
+</body>
+</html>
