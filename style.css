@@ -1,0 +1,124 @@
+/* Definimos nuestros colores principales para mantener todo ordenado */
+:root {
+    --bg-color: #0f0f1b;
+    --card-bg: #1a1a2e;
+    --text-color: #e0e0e0;
+    --accent-color: #6c63ff;
+    --border-radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 450px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+.input-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+input:focus {
+    border: 1px solid var(--accent-color);
+}
+
+/* Ocultamos el ícono de calendario por defecto que traen algunos navegadores si queremos algo más limpio, aunque por ahora lo dejamos estándar */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #5750d4;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+#results-section {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#results-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
